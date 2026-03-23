@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sorry Mnku Ji 💗</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: red;
+}
+
+.top-right {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-weight: bold;
+}
+
+.container {
+    margin-top: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: pink;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="top-right" id="langLabel"></div>
+
+<h1 id="heading"></h1>
+
+<div class="container" id="content"></div>
+
+<button onclick="nextPage()">❤️ Next Page</button>
+
+<script>
+let page = 1;
+
+function generateText(word) {
+    let text = "";
+    for (let i = 0; i < 1000; i++) {
+        text += word + " ";
+    }
+    return text;
+}
+
+function loadPage() {
+    let heading = document.getElementById("heading");
+    let content = document.getElementById("content");
+    let langLabel = document.getElementById("langLabel");
+
+    if (page === 1) {
+        heading.innerText = "Sorry Mnku Ji 💗";
+        langLabel.innerText = "English";
+        content.innerText = generateText("Sorry");
+    }
+
+    else if (page === 2) {
+        heading.innerText = "Sorry Mnku Ji 💗";
+        langLabel.innerText = "Hindi";
+        content.innerText = generateText("माफ कर दीजिए");
+    }
+
+    else if (page === 3) {
+        heading.innerText = "Извини Mnku Ji 💗";
+        langLabel.innerText = "Русский (Russian)";
+        content.innerText = generateText("Извини");
+    }
+
+    else if (page === 4) {
+        heading.innerText = "Désolé Mnku Ji 💗";
+        langLabel.innerText = "Français (French)";
+        content.innerText = generateText("Désolé");
+    }
+
+    else if (page === 5) {
+        heading.innerText = "Lo siento Mnku Ji 💗";
+        langLabel.innerText = "Spanish";
+        content.innerText = generateText("Lo siento");
+    }
+
+    else {
+        heading.innerText = "Bas ab maaf bhi kar do 😭💗";
+        content.innerText = "I tried my best 💗";
+        document.querySelector("button").style.display = "none";
+    }
+}
+
+function nextPage() {
+    page++;
+    loadPage();
+}
+
+loadPage();
+</script>
+
+</body>
+</html>
